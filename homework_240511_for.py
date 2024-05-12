@@ -3,6 +3,7 @@ cars_count = 0
 for i in cars:
     cars_count += 10
     print('Я езжу на автомобиле марки', i)
+    print(cars_count)
 
 
 
