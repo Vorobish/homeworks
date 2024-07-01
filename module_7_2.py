@@ -1,9 +1,7 @@
-
 def custom_write(file_name, strings):
     strings_position = {}
     file = open(file_name, 'w', encoding='utf-8')
     k = 0
-    t = 0
     for i in strings:
         k += 1
         strings_position[k, file.tell()] = i
@@ -23,6 +21,3 @@ info = [
 result = custom_write('test.txt', info)
 for elem in result.items():
     print(elem)
-
-
-
