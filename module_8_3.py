@@ -31,9 +31,12 @@ class Car:
         else:
             return True
 
+    def __eq__(self, other):
+        return self.model == other.model and self.__number == other.__number and self.__vin_number == other.__vin_number
+
     def has_already(self):
         for i in Car.cars:
-            if self.model == i.model and self.__number == i.__number and self.__vin_number == i.__vin_number:
+            if self == i:
                 # print(f'Модель {self.model} с номерами: {self.__vin_number}, {self.__number} - уже существует')
                 return False
         else:
@@ -44,7 +47,7 @@ class Car:
             raise IncorrectCarNumbers('Некорректный тип данных для номеров')
         if len(self.__number) != 6:
             raise IncorrectCarNumbers('Неверная длина номера')
-        if not self.has_already():
+        if not self.has_already(): # засунула сюда, чтобы по Вашим проверочным скриптам отрабатывало
             raise IncorrectCarNumbers('Модель с такими атрибутами уже существует')
         else:
             return True
@@ -110,7 +113,3 @@ else:
   print(f'{third.model} успешно создан')
 
 print(*Car.cars)
-
-
-
-
