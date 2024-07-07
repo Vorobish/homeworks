@@ -23,7 +23,6 @@ def calculate_average(numbers):
             count_int = len(numbers) - personal_sum_n[1]
             return summ / count_int
         except ZeroDivisionError as exc:
-            # print('В коллекции нет чисел')
             return 0
 
 print(f'Результат 1: {calculate_average("1, 2, 3")}') # Строка перебирается, но каждый символ - строковый тип
