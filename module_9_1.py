@@ -1,8 +1,6 @@
-
 def apply_all_func(int_list, *function):
-    list_ = list(function)
     res = {}
-    for f in list_:
+    for f in function:
         res.update({f.__name__: f(int_list)})
     return res
 
