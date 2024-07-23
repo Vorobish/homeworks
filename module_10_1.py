@@ -9,7 +9,7 @@ def wite_words(word_count, file_name):
         for i in range(word_count):
             file.write(f"Какое-то слово № {i + 1}" + '\n')
         sleep(0.1)
-        print(f"Завершилась запись в файл {file_name}")
+        print(f"Завершилась запись в файл {file_name}" + '\n', end='')
 
 
 time_start = datetime.now()
