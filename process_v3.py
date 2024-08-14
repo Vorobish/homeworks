@@ -1,5 +1,4 @@
 import multiprocessing as mp
-import time
 
 
 class WarehouseManager:
@@ -47,8 +46,3 @@ manager.run(requests)
 
 # Выводим обновленные данные о складских запасах
 print(manager.data)
-
-
-
-
-
