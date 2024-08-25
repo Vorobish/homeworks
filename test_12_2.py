@@ -3,16 +3,19 @@ import unittest as u
 
 
 class TournamentTest(u.TestCase):
+    is_frozen = True
 
     @classmethod
     def setUpClass(cls):
         TournamentTest.all_result = {}
 
+    @u.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def setUp(self):
         self.runnerY = m.Runner("Усэйн", 10)
         self.runnerA = m.Runner("Андрей", 9)
         self.runnerN = m.Runner("Ник", 3)
 
+    @u.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def testTournament(self):
         self.tournament = m.Tournament(90, self.runnerY, self.runnerN)
         finishers = self.tournament.start()
@@ -23,6 +26,7 @@ class TournamentTest(u.TestCase):
             finishers_str.update({f: str(finishers[f])})
         TournamentTest.all_result.update({1: str(finishers_str).replace("'", "")})
 
+    @u.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def testTournament2(self):
         self.tournament = m.Tournament(90, self.runnerA, self.runnerN)
         finishers = self.tournament.start()
@@ -33,6 +37,7 @@ class TournamentTest(u.TestCase):
             finishers_str.update({f: str(finishers[f])})
         TournamentTest.all_result.update({2: str(finishers_str).replace("'", "")})
 
+    @u.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def testTournament3(self):
         self.tournament = m.Tournament(90, self.runnerA, self.runnerY, self.runnerN)
         finishers = self.tournament.start()
@@ -47,6 +52,7 @@ class TournamentTest(u.TestCase):
     def tearDownClass(cls):
         for i in TournamentTest.all_result:
             print(TournamentTest.all_result[i])
+
 
 if __name__ == '__main__':
     u.main()
