@@ -37,10 +37,7 @@ for user in users:
 cursor.execute('DELETE FROM Users WHERE id = ?', (6, ))
 
 cursor.execute('SELECT COUNT(*), SUM(balance) FROM Users')
-total_users = cursor.fetchone()[0]
-
-cursor.execute('SELECT SUM(balance) FROM Users')
-all_balances = cursor.fetchone()[0]
+total_users, all_balances = cursor.fetchone()
 
 print(all_balances / total_users)
 
